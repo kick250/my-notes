@@ -14,6 +14,7 @@ export default {
     ...mapActions('index', ['addNote']),
 
     createNote(note) {
+      note.id = Date.now();
       this.addNote(note);
       this.$router.push('/');
     }
