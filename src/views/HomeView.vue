@@ -6,8 +6,8 @@
         <span>Favoritadas</span><input type="checkbox" v-model="showJustFavorited">
       </div>
     </div>
-    <div class="notes-list p-4" v-show="hasNotes">
-      <div v-for="(note, index) in filteredNotes" :key="index" class="note px-3">
+    <div class="notes-list p-4">
+      <div v-show="hasNotes" v-for="(note, index) in filteredNotes" :key="index" class="note px-3">
         <p class="h3 text-center my-3 mx-0">
           {{note.title}}
         </p>
