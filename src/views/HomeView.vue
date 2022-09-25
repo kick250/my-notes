@@ -92,13 +92,13 @@ export default {
 
   @media (min-width: 576px) {
     .notes-list {
-      grid-template-columns: auto 48%;
+      grid-template-columns: 48% 48%;
     }
   }
 
   @media (min-width: 992px) {
     .notes-list {
-      grid-template-columns: auto auto 30%;
+      grid-template-columns: 30% 30% 30%;
     }
   }
 </style>
