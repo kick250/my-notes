@@ -1,21 +1,28 @@
 <template>
   <div>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <router-link class="navbar-brand" to="/">Home</router-link>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <router-link class="nav-link" to="/">Adicionar</router-link>
-          </li>
-        </ul>
-      </div>
+    <nav class="d-flex py-3 px-4 nav gap-3">
+      <router-link to="/">Home</router-link>
+      <router-link to="/add">Adicionar</router-link>
     </nav>
-    <router-view/>
+    <router-view class="mx-3 my-2"/>
   </div>
 </template>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-}
+  body {
+    color: #4F5E67;
+  }
+
+  #app {
+    font-family: sans-serif;
+  }
+
+  .nav {
+    background: cornflowerblue;
+  }
+
+  .nav a {
+    color: white;
+    text-decoration: none;
+  }
 </style>
