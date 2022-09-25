@@ -14,7 +14,7 @@
         <p class="note-content p-2">{{note.content}}</p>
         <div class="options">
           <button @click="deleteNote(note)" type="button" class="btn btn-danger">&#128465;</button>
-          <router-link class="btn btn-primary" to="/edit">&#9998;</router-link>
+          <router-link @click="setSelectedNote(note)" class="btn btn-primary" to="/edit">&#9998;</router-link>
           <span v-if="note.favorited" class="star">&#9733;</span>
         </div>
       </div>
@@ -50,7 +50,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions('index', ['deleteNote']),
+    ...mapActions('index', ['deleteNote', 'setSelectedNote']),
     addNotes() {
       this.$router.push('/add')
     }
@@ -61,7 +61,7 @@ export default {
 <style scoped>
   .notes-list {
     display: grid;
-    grid-template-columns: auto;
+    grid-template-columns: 100%;
     justify-content: space-between;
     column-gap: 30px;
     row-gap: 20px;

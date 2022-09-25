@@ -32,7 +32,10 @@ export default {
     },
     preLoadedNote: {
       type: Object,
-      required: false
+      required: false,
+      default() {
+        return {}
+      }
     }
   },
   data() {
@@ -44,6 +47,10 @@ export default {
         favorited: false
       }
     }
+  },
+  mounted() {
+    if (Object.keys(this.preLoadedNote).length > 0)
+      this.note = this.preLoadedNote;
   },
   methods: {
     save() {

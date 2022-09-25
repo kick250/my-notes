@@ -6,7 +6,8 @@ const index = {
     notes: [
       {id: 1, title: 'faucibus volutpat', favorited: false, content: 'Etiam lacus orci, viverra a augue ut, volutpat posuere nisi. Suspendisse dignissim vel quam at finibus. In hac habitasse platea dictumst. Sed '},
       {id: 2, title: 'faucibus volutpat', favorited: true, content: 'Etiam lacus orci, viverra a augue ut, volutpat posuere nisi. Suspendisse dignissim vel quam at finibus. In hac habitasse platea dictumst. Sed '}
-    ]
+    ],
+    selectedNote: {}
   },
   mutations: {
     addNote(state, note) {
@@ -16,6 +17,17 @@ const index = {
       state.notes = state.notes.filter(stateNote => {
         return (stateNote.id !== note.id);
       });
+    },
+    setSelectedNote(state, note) {
+      state.selectedNote = note;
+    },
+    updateNote(state, note) {
+      state.notes = state.notes.map(stateNote => {
+        if (note.id === stateNote.id)
+          return note;
+
+        return stateNote;
+      })
     }
   },
   actions: {
@@ -24,6 +36,12 @@ const index = {
     },
     deleteNote({commit}, note) {
       commit('deleteNote', note);
+    },
+    setSelectedNote({commit}, note) {
+      commit('setSelectedNote', note);
+    },
+    updateNote({commit}, note) {
+      commit('updateNote', note);
     }
   },
 };
