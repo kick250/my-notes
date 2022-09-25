@@ -6,6 +6,7 @@
         <div class="alert alert-danger w-100" v-for="(error, index) in this.errors" :key="index">
           {{error}}
         </div>
+        <p v-if="note.createdAt">Criada em {{noteDate}}</p>
         <input class="w-50 text-center form-control" v-model="note.title" type="text" placeholder="Titulo da nota">
         <div class="form-check">
           <input v-model="note.favorited" class="form-check-input" name="favorited" type="checkbox">
@@ -70,6 +71,11 @@ export default {
       this.errors = errors;
 
       return this.errors.length === 0;
+    }
+  },
+  computed: {
+    noteDate() {
+      return this.note.createdAt.toLocaleDateString("pt-BR");
     }
   }
 }

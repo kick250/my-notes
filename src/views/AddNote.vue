@@ -15,6 +15,7 @@ export default {
 
     createNote(note) {
       note.id = Date.now();
+      note.createdAt = new Date();
       this.addNote(note);
       this.$router.push('/');
     }

@@ -4,8 +4,8 @@ const index = {
   namespaced: true,
   state: {
     notes: [
-      {id: 1, title: 'faucibus volutpat', favorited: false, content: 'Etiam lacus orci, viverra a augue ut, volutpat posuere nisi. Suspendisse dignissim vel quam at finibus. In hac habitasse platea dictumst. Sed '},
-      {id: 2, title: 'faucibus volutpat', favorited: true, content: 'Etiam lacus orci, viverra a augue ut, volutpat posuere nisi. Suspendisse dignissim vel quam at finibus. In hac habitasse platea dictumst. Sed '}
+      {id: 1, createdAt: new Date(), title: 'faucibus volutpat', favorited: false, content: 'Etiam lacus orci, viverra a augue ut, volutpat posuere nisi. Suspendisse dignissim vel quam at finibus. In hac habitasse platea dictumst. Sed '},
+      {id: 2, createdAt: new Date(), title: 'faucibus volutpat', favorited: true, content: 'Etiam lacus orci, viverra a augue ut, volutpat posuere nisi. Suspendisse dignissim vel quam at finibus. In hac habitasse platea dictumst. Sed '}
     ],
     selectedNote: {}
   },
