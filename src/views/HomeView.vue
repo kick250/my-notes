@@ -12,7 +12,11 @@
           {{note.title}}
         </p>
         <p class="note-content p-2">{{note.content}}</p>
-        <p v-if="note.favorited" class="star">&#9733;</p>
+        <div class="options">
+          <button @click="deleteNote(note)" type="button" class="btn btn-danger">&#128465;</button>
+          <router-link class="btn btn-primary" to="/edit">&#9998;</router-link>
+          <span v-if="note.favorited" class="star">&#9733;</span>
+        </div>
       </div>
       <div class="d-flex justify-content-center align-items-center">
         <button @click="addNotes" class="add-note-button btn">+</button>
@@ -22,7 +26,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapActions, mapState } from 'vuex';
 
 export default {
   data() {
@@ -46,6 +50,7 @@ export default {
     }
   },
   methods: {
+    ...mapActions('index', ['deleteNote']),
     addNotes() {
       this.$router.push('/add')
     }
@@ -78,8 +83,12 @@ export default {
     font-size: 4em;
   }
 
-  .star {
-    text-align: right;
+  .options {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5em;
   }
 
   .filters {
