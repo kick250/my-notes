@@ -3,7 +3,7 @@
     <div class="d-flex justify-content-between align-items-stretch mx-2">
       <p class="h1 my-4 text-center">Notas criadas</p>
       <div class="filters m-3 px-3 gap-2">
-        <span>Favoritadas</span><input type="checkbox" v-model="showJustFavorited">
+        <label for="favorited">Favoritadas</label><input id="favorited" type="checkbox" v-model="showJustFavorited">
       </div>
     </div>
     <div class="notes-list p-4">

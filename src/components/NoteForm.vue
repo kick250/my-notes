@@ -9,7 +9,7 @@
         <p v-if="note.createdAt">Criada em {{noteDate}}</p>
         <input class="w-50 text-center form-control" v-model="note.title" type="text" placeholder="Titulo da nota">
         <div class="form-check">
-          <input v-model="note.favorited" class="form-check-input" name="favorited" type="checkbox">
+          <input v-model="note.favorited" class="form-check-input" id="favorited" name="favorited" type="checkbox">
           <label class="form-check-label" for="favorited">
             Favoritar nota
           </label>
