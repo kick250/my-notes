@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import { mapActions, mapState } from 'vuex';
+import { mapActions, mapGetters, mapState } from 'vuex';
 
 export default {
   data() {
@@ -43,7 +43,7 @@ export default {
 
     filteredNotes() {
       if (this.showJustFavorited) {
-        return this.notes.filter(note => { return note.favorited})
+        return this.getFavoritedNotes()
       }
 
       return this.notes;
@@ -51,6 +51,7 @@ export default {
   },
   methods: {
     ...mapActions('index', ['deleteNote', 'setSelectedNote']),
+    ...mapGetters('index', ['getFavoritedNotes']),
     addNotes() {
       this.$router.push('/add')
     }

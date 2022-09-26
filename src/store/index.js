@@ -44,6 +44,11 @@ const index = {
       commit('updateNote', note);
     }
   },
+  getters: {
+    getFavoritedNotes({notes}) {
+      return notes.filter(note => { return note.favorited});
+    }
+  }
 };
 
 index
