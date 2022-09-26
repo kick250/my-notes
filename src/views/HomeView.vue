@@ -18,6 +18,12 @@
           <span v-if="note.favorited" class="star">&#9733;</span>
         </div>
       </div>
+      <div v-if="!hasNotes">
+        <p class="h2 text-center">Não existem notas adicionadas.</p>
+      </div>
+      <div v-else-if="!hasFavoritedNotes && showJustFavorited">
+        <p class="h2 text-center">Não existem notas favoritadas.</p>
+      </div>
       <div class="d-flex justify-content-center align-items-center">
         <button @click="addNotes" class="add-note-button btn">+</button>
       </div>
@@ -39,6 +45,10 @@ export default {
 
     hasNotes() {
       return this.notes.length > 0;
+    },
+
+    hasFavoritedNotes() {
+      return this.getFavoritedNotes().length > 0;
     },
 
     filteredNotes() {
